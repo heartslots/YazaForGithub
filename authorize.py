@@ -44,12 +44,6 @@ def add_column(column_name): #컬럼이 존재하지 않을 시 해당 이름으
     db.commit()
     print("완료")
 
-def check_student_quantity(): #인원 수 체크
-    sql = "SELECT id FROM "+TABLE_NAME+" WHERE isUsing = 1"
-    cursor.execute(sql)
-    result = cursor.fetchall()
-    return len(result[0])
-
 def timestamp(id): #종료시간 체크
     if now.minute < 10:
         NOW_TIME = int(str(now.hour)+"0"+str(now.minute))        
